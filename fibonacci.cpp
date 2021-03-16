@@ -24,14 +24,21 @@ int main(int argc, char *argv[]){
 // Custom functions
 void fibonacci(){
     int nElements;
-    double dPi = 3.14159, dPiApprox;
-
     //  Prompt user for desired number of elements
     printf("Please enter how many elements to print: \n");
     scanf("%d",&nElements);
-
-    //  Fibonacci Sequence
-    for (int i=0; i<(nElements); i++){
-       
+    // Paragraph break for better visuals
+    printf("\n\n");
+    // Initialize array with given number of elements
+    int nSequence[nElements];
+    nSequence[0] = 0;
+    nSequence[1] = 1;
+    //  Populate the array with the Fibonacci Sequence
+    for (int i=2; i<nElements; i++){
+       nSequence[i] = nSequence[i-2]+nSequence[i-1];
+    }
+    // Print out the sequence
+    for (int i=0; i<nElements; i++){
+        printf("%d\n", nSequence[i]);
     }
 }
